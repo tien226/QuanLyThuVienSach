@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:layout_marginRight="8dp"
+        android:id="@+id/imgtheloaiadapter"
+        android:src="@drawable/cateicon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"/>
+
+    <TextView
+        android:layout_toRightOf="@+id/imgtheloaiadapter"
+        android:id="@+id/ma_theLoai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/ma_theLoai"
+        android:layout_toRightOf="@+id/imgtheloaiadapter"
+        android:id="@+id/ten_the_loai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/close_theLoai"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_close"
+        android:layout_width="48dp"
+        android:layout_height="48dp"/>
+</RelativeLayout>

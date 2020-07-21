@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icons_logo_login" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textAllCaps="true"
+        android:text="Quản Lý Thư Viện"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="Tên đăng nhập"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:background="@drawable/et_bg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/edtUserName"
+        android:hint="Tên đăng nhập"/>
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="mật khẩu"
+        android:textAllCaps="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:background="@drawable/et_bg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/edtPassWord"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu thông tin tài khoản"
+        android:id="@+id/remember" />
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="btndangnhaplogin"
+            android:background="@drawable/btn_bg"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogin"
+            android:text="Đăng nhập" />
+
+        <Button
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnCancel"
+            android:text="Hủy" />
+    </LinearLayout>
+</LinearLayout>
