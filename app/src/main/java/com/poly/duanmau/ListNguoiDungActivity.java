@@ -3,6 +3,7 @@ package com.poly.duanmau;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,17 +30,16 @@ public class ListNguoiDungActivity extends AppCompatActivity {
     NguoiDungDao nguoiDungDAO;
     NguoiDungAdapter nguoiDungAdapter;
     List<NguoiDung> nguoiDungList;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_nguoi_dung);
-
         lvNguoiDung = findViewById(R.id.lvNguoiDung);
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         nguoiDungDAO = new NguoiDungDao(ListNguoiDungActivity.this);
-
-
         registerForContextMenu(lvNguoiDung);
         Loadnguoidung();
     }
