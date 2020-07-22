@@ -16,13 +16,6 @@ public class ManhinhchaoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manhinhchao);
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-//                finish();
-//            }
-//        }, 1000);
 
         TextView wellcomlibrary = (TextView) findViewById(R.id.Et_title);
         ImageView iconlibrary = (ImageView) findViewById(R.id.icon_library);
