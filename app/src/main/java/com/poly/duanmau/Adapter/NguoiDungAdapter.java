@@ -51,13 +51,12 @@ public class NguoiDungAdapter extends BaseAdapter {
             holder = new viewHolder();
             holder.phone = convertView.findViewById(R.id.sdt_nguoi_dung);
             holder.hoTen = convertView.findViewById(R.id.ten_nguoi_dung);
-            holder.icon_delete = convertView.findViewById(R.id.close_nguoiDung);
             convertView.setTag(holder);
         } else {
             holder = (viewHolder) convertView.getTag();
         }
         holder.hoTen.setText("Họ tên: "+nguoiDungList.get(position).getHoTen());
-        holder.phone.setText("Sđt: "+nguoiDungList.get(position).getPhone());
+        holder.phone.setText("SĐT: "+nguoiDungList.get(position).getPhone());
 
         // Xóa dữ liệu
 //        holder.icon_delete.setOnClickListener(new View.OnClickListener() {

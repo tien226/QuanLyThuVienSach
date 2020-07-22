@@ -29,6 +29,8 @@ public class NguoiDungActivity extends AppCompatActivity {
         setTitle("Thêm Người dùng");
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         edUser = findViewById(R.id.edUser);
         edPassWord = findViewById(R.id.edPassWord);
         edRePass = findViewById(R.id.edRePassWord);

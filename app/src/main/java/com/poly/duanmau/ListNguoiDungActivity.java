@@ -39,9 +39,28 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         lvNguoiDung = findViewById(R.id.lvNguoiDung);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("NGƯỜI DÙNG");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nguoiDungDAO = new NguoiDungDao(ListNguoiDungActivity.this);
         registerForContextMenu(lvNguoiDung);
         Loadnguoidung();
+        lvNguoiDung.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ListNguoiDungActivity.this, ChiTietNguoiDung.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("userName_key",nguoiDungList.get(position).getUserName());
+                bundle.putString("password_key",nguoiDungList.get(position).getPassWord());
+                bundle.putString("phone_key",nguoiDungList.get(position).getPhone());
+                bundle.putString("hoTen_key",nguoiDungList.get(position).getHoTen());
+
+                intent.putExtra("bun",bundle);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void Loadnguoidung(){

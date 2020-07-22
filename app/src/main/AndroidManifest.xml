@@ -2,17 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.poly.duanmau">
 
-<!--    <uses-permission android:name="android.permission.INTERNET"/>-->
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Quan Ly Sach"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListSachActivity"></activity>
+        <activity android:name=".ChiTietNguoiDung"></activity>
+        <activity android:name=".ListSachActivity" />
         <activity android:name=".ListTheLoaiActivity" />
-        <activity android:name=".ListNguoiDungActivity" />
+        <activity
+            android:name=".ListNguoiDungActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".HDCTActivity" />
         <activity android:name=".ThemHDCTActivity" />
         <activity android:name=".Them_Hoa_Don_Activity" />
@@ -29,7 +30,9 @@
         <activity android:name=".TopBookActivity" />
         <activity android:name=".SachActivity" />
         <activity android:name=".TheLoaiActivity" />
-        <activity android:name=".NguoiDungActivity" />
+        <activity
+            android:name=".NguoiDungActivity"
+            android:parentActivityName=".ListNguoiDungActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
