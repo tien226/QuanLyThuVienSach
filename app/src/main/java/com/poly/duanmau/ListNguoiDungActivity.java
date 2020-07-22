@@ -42,6 +42,7 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         setTitle("NGƯỜI DÙNG");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         nguoiDungDAO = new NguoiDungDao(ListNguoiDungActivity.this);
         registerForContextMenu(lvNguoiDung);
         Loadnguoidung();

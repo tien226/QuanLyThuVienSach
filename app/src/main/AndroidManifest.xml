@@ -8,7 +8,8 @@
         android:label="Quan Ly Sach"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChiTietNguoiDung"></activity>
+        <activity android:name=".ChiTietNguoiDung"
+            android:parentActivityName=".ListNguoiDungActivity"></activity>
         <activity android:name=".ListSachActivity" />
         <activity android:name=".ListTheLoaiActivity" />
         <activity
