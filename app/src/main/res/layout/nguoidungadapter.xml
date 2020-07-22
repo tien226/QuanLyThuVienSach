@@ -7,7 +7,7 @@
     <ImageView
         android:layout_marginRight="8dp"
         android:id="@+id/icon_nguoi_dung"
-        android:src="@drawable/emone"
+        android:src="@drawable/nguoidung2"
         android:layout_width="48dp"
         android:layout_height="48dp"/>
 
