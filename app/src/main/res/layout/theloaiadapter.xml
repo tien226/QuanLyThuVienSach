@@ -8,7 +8,7 @@
     <ImageView
         android:layout_marginRight="8dp"
         android:id="@+id/imgtheloaiadapter"
-        android:src="@drawable/cateicon"
+        android:src="@drawable/theloai2"
         android:layout_width="48dp"
         android:layout_height="48dp"/>
 
@@ -25,11 +25,4 @@
         android:id="@+id/ten_the_loai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-    <ImageView
-        android:id="@+id/close_theLoai"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_close"
-        android:layout_width="48dp"
-        android:layout_height="48dp"/>
 </RelativeLayout>

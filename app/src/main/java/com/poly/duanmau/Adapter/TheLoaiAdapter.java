@@ -51,7 +51,6 @@ public class TheLoaiAdapter extends BaseAdapter {
             hoder = new viewHolder();
             hoder.tentheloai = convertView.findViewById(R.id.ten_the_loai);
             hoder.matheloai = convertView.findViewById(R.id.ma_theLoai);
-            hoder.icon_delete_tl = convertView.findViewById(R.id.close_theLoai);
             convertView.setTag(hoder);
         } else {
             hoder = (viewHolder) convertView.getTag();

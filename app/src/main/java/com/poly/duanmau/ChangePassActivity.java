@@ -1,6 +1,7 @@
 package com.poly.duanmau;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,21 +9,32 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.NguoiDungDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
 
 public class ChangePassActivity extends AppCompatActivity {
     EditText edtChangeUser, edtChangePass, edtChangeRePass;
+    TextInputLayout textInputLayoutEdUser,textInputLayoutPass, textInputLayoutRePass;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
         setTitle("Đổi mật khẩu");
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         edtChangeUser = findViewById(R.id.edt_changeUser);
         edtChangePass = findViewById(R.id.edt_changePass);
         edtChangeRePass = findViewById(R.id.edt_changeRePass);
+        textInputLayoutEdUser = findViewById(R.id.textInputLayoutEdUser);
+        textInputLayoutPass = findViewById(R.id.textInputLayoutPass);
+        textInputLayoutRePass = findViewById(R.id.textInputLayoutRePass);
+
     }
 
     public int check() {
@@ -31,11 +43,11 @@ public class ChangePassActivity extends AppCompatActivity {
             check = 1;
             Toast.makeText(this, "Bạn phải nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
         }else if (edtChangePass.length() < 6){
-            Toast.makeText(this, "Bạn phải nhập mật khẩu ít nhất 6 kí tự!", Toast.LENGTH_SHORT).show();
+            textInputLayoutPass.setError("Bạn phải nhập mật khẩu ít nhất 6 kí tự!");
             check = 1;
         } else if (!edtChangePass.getText().toString().equals(edtChangeRePass.getText().toString())) {
             check = 1;
-            Toast.makeText(this, "Mật khẩu không trùng khớp!", Toast.LENGTH_SHORT).show();
+            textInputLayoutRePass.setError("Mật khẩu không trùng khớp!");
         }
         return check;
     }

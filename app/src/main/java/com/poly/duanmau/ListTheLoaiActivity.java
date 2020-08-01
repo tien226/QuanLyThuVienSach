@@ -3,6 +3,7 @@ package com.poly.duanmau;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,11 +30,17 @@ public class ListTheLoaiActivity extends AppCompatActivity {
     TheLoaiDao theLoaiDao;
     List<TheLoai> theLoaiList = new ArrayList<>();
     TheLoaiAdapter theloaiAdapter;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_the_loai);
         setTitle("Danh Sách Thể Loại");
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         lv_theloai = findViewById(R.id.lvTheLoai);
 

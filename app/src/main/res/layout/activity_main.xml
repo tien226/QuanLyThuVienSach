@@ -53,7 +53,7 @@
                     android:layout_height="80dp"
                     android:layout_alignParentRight="true"
                     android:onClick="viewTheLoai"
-                    android:src="@drawable/cateicon" />
+                    android:src="@drawable/theloai2" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
