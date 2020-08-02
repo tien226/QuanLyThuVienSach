@@ -3,6 +3,7 @@ package com.poly.duanmau;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,10 +32,16 @@ public class ListSachActivity extends AppCompatActivity {
     SachDao sachDao;
     List<Sach>  sachList;
     SachAdapter sachAdapter;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_sach);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("Sách");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         lv_sach = findViewById(R.id.lv_sach);
         edttimkiemsach = findViewById(R.id.edttimkiemsach);

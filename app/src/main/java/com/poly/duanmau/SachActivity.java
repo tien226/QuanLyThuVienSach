@@ -1,6 +1,7 @@
 package com.poly.duanmau;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class SachActivity extends AppCompatActivity {
     String matheloai = "";
     TheLoaiDao theLoaiDao;
     List<TheLoai> theLoaiList = new ArrayList<>();
+    Toolbar toolbar;
 //    SachAdapter sachAdapter;
 //    ListView lv_sach;
 
@@ -34,6 +36,10 @@ public class SachActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sach);
         setTitle("Thêm Sách");
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_tenSach = findViewById(R.id.edt_tenSach);
         edt_maSach = findViewById(R.id.edt_maSach);

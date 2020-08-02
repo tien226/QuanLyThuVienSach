@@ -48,6 +48,22 @@ public class ListTheLoaiActivity extends AppCompatActivity {
 
         registerForContextMenu(lv_theloai);
         LoadTheloai();
+        lv_theloai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ListTheLoaiActivity.this, ChiTietTheLoai.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("MaTL_key",theLoaiList.get(position).getMaTheLoai());
+                bundle.putString("TenTL_key",theLoaiList.get(position).getTenTheLoai());
+                bundle.putString("MoTa_key",theLoaiList.get(position).getMoTa());
+                bundle.putString("ViTri_key", String.valueOf(theLoaiList.get(position).getViTri()));
+
+                intent.putExtra("bun",bundle);
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void LoadTheloai(){

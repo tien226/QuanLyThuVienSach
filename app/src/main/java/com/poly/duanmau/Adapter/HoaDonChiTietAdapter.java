@@ -52,7 +52,7 @@ public class HoaDonChiTietAdapter extends BaseAdapter {
             holder.giaBan = convertView.findViewById(R.id.giaBan_rowHDCT);
             holder.soLuong = convertView.findViewById(R.id.soLuong_rowHDCT);
             holder.thanhTien = convertView.findViewById(R.id.thanhTien_rowHDCT);
-            holder.close_hoaDonChiTiet = convertView.findViewById(R.id.close_hoaDonChiTiet);
+//            holder.close_hoaDonChiTiet = convertView.findViewById(R.id.close_hoaDonChiTiet);
             convertView.setTag(holder);
         } else {
             holder = (viewHolder) convertView.getTag();

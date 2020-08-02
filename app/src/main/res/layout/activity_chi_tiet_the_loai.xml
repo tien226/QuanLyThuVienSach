@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/backgroud"
-    tools:context=".ChiTietNguoiDung">
+    android:orientation="vertical"
+    tools:context=".ChiTietTheLoai">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,54 +22,35 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/nguoidung2" />
+        android:src="@drawable/theloai2" />
 
     <TextView
         android:padding="10px"
-        android:id="@+id/edUserName"
+        android:id="@+id/tvMaTL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="10pt"
-        android:hint="Tên đăng nhập" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10px"
-        android:weightSum="2">
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="550px"
+        android:hint="Mã thể loại" />
+    <TextView
+            android:id="@+id/tvTenTL"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:text="Mật khẩu:"/>
-       <TextView
-        android:id="@+id/edPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10pt"
-        android:inputType="textPassword"
-        android:hint="Mật Khẩu" />
-    </LinearLayout>
-
-
+            android:hint="Tên thể loại" />
     <TextView
         android:padding="10px"
-        android:id="@+id/edPhone"
+        android:id="@+id/tvMoTa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="10pt"
-        android:hint="Phone" />
+        android:hint="Mô tả" />
 
     <TextView
         android:padding="10px"
         android:textSize="10pt"
-        android:id="@+id/edFullName"
+        android:id="@+id/tvViTri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Họ và Tên" />
-
-
-
+        android:hint="Vị trí" />
 
 </LinearLayout>
