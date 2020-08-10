@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.poly.duanmau.DAO.NguoiDungDao;
-import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
+import com.poly.duanmau.R;
 
 import java.util.List;
 

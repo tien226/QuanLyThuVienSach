@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,6 +16,7 @@ import com.poly.duanmau.DAO.SachDao;
 import com.poly.duanmau.DAO.TheLoaiDao;
 import com.poly.duanmau.Model.Sach;
 import com.poly.duanmau.Model.TheLoai;
+import com.poly.duanmau.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +36,10 @@ public class SachActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sach);
-        setTitle("Thêm Sách");
+        setTitle("Quản Lý Sách");
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_tenSach = findViewById(R.id.edt_tenSach);
         edt_maSach = findViewById(R.id.edt_maSach);
@@ -85,8 +85,7 @@ public class SachActivity extends AppCompatActivity {
             sach.setGiaBan(Double.valueOf(edt_giaBan.getText().toString()));
             sach.setSoLuong(Integer.valueOf(edt_soLuong.getText().toString()));
 
-            long themsach = sachDAO.insertSach(sach);
-            if (themsach>0){
+            if (sachDAO.insertSach(sach)>0){
                 Toast.makeText(this, "Thêm sách thành công", Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(this, "Thêm sách không thành công!", Toast.LENGTH_SHORT).show();

@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
-    tools:context=".ListNguoiDungActivity">
+    tools:context=".Activity.ListNguoiDungActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,9 +16,8 @@
         android:theme="?attr/actionBarTheme">
     </androidx.appcompat.widget.Toolbar>
 
-
-
     <ListView
+        android:padding="8dp"
         android:id="@+id/lvNguoiDung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

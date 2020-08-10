@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/backgroud">
+    android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -13,100 +13,121 @@
         android:theme="?attr/actionBarTheme">
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="81dp"
-        android:layout_gravity="center"
-        android:src="@drawable/sach2" />
-
-    <EditText
+    <TextView
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="THÊM SÁCH"
+        android:textSize="32dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_maSach"
-        android:hint="Mã sách"
-        android:layout_marginTop="20dp" />
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:weightSum="3"
-        android:orientation="horizontal"
+        android:padding="8dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mã thể loại: "/>
+            android:id="@+id/edt_maSach"
+            android:hint="Mã sách"
+            android:layout_marginTop="20dp" />
 
-        <Spinner
-            android:layout_weight="3"
-            android:id="@+id/spTheLoai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:padding="8dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã thể loại: "/>
 
-    </LinearLayout>
+            <Spinner
+                android:layout_weight="3"
+                android:id="@+id/spTheLoai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/edt_tenSach"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tên sách" />
+        <EditText
+            android:id="@+id/edt_tenSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên sách" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_tacGia"
-        android:hint="Tác giả"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_tacGia"
+            android:hint="Tác giả"
+            android:layout_marginTop="20dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_nxb"
-        android:hint="Nhà xuất bản"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_nxb"
+            android:hint="Nhà xuất bản"
+            android:layout_marginTop="20dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_giaBan"
-        android:inputType="number"
-        android:hint="Giá bìa"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_giaBan"
+            android:inputType="number"
+            android:hint="Giá bìa"
+            android:layout_marginTop="20dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_soLuong"
-        android:hint="Số lượng sách"
-        android:inputType="number"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_soLuong"
+            android:hint="Số lượng sách"
+            android:inputType="number"
+            android:layout_marginTop="20dp" />
 
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginRight="8dp"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/backgroud_btn"
+                android:onClick="btnthemsach"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm" />
+
+            <Button
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/backgroud_btn"
+                android:onClick="btnhuysach"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xóa" />
+        </LinearLayout>
 
         <Button
-            android:onClick="btnthemsach"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/backgroud_btn"
+            android:onClick="btndssach"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thêm" />
+            android:text="danh sách các sách" />
 
-        <Button
-            android:onClick="btnhuysach"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hủy" />
     </LinearLayout>
-
-    <Button
-        android:onClick="btndssach"
-        android:layout_marginBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="danh sách các sách" />
 </LinearLayout>

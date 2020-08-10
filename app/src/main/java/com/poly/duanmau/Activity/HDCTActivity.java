@@ -1,19 +1,17 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.poly.duanmau.Adapter.HoaDonChiTietAdapter;
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.HoaDonChiTiet;
+import com.poly.duanmau.R;
 
 import java.util.ArrayList;
 import java.util.List;

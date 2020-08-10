@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +13,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.NguoiDungDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
+import com.poly.duanmau.R;
 
 public class ChangePassActivity extends AppCompatActivity {
     EditText edtChangeUser, edtChangePass, edtChangeRePass;

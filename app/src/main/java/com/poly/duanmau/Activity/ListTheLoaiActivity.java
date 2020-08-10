@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.poly.duanmau.Adapter.TheLoaiAdapter;
 import com.poly.duanmau.DAO.TheLoaiDao;
 import com.poly.duanmau.Model.TheLoai;
+import com.poly.duanmau.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,6 @@ public class ListTheLoaiActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         lv_theloai = findViewById(R.id.lvTheLoai);
 

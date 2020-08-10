@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.poly.duanmau.Adapter.SachAdapter;
 import com.poly.duanmau.DAO.SachDao;
 import com.poly.duanmau.Model.Sach;
+import com.poly.duanmau.R;
 
 import java.util.List;
 
@@ -39,9 +40,8 @@ public class ListSachActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_sach);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Sách");
+        setTitle("Danh Sách Các Sách");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         lv_sach = findViewById(R.id.lv_sach);
         edttimkiemsach = findViewById(R.id.edttimkiemsach);

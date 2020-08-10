@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.poly.duanmau.Adapter.NguoiDungAdapter;
 import com.poly.duanmau.DAO.NguoiDungDao;
-import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
+import com.poly.duanmau.R;
 
 import java.util.List;
 
@@ -39,9 +39,8 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         lvNguoiDung = findViewById(R.id.lvNguoiDung);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("NGƯỜI DÙNG");
+        setTitle("Danh Sách Người Dùng");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nguoiDungDAO = new NguoiDungDao(ListNguoiDungActivity.this);
         registerForContextMenu(lvNguoiDung);
@@ -70,8 +69,6 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         lvNguoiDung.setAdapter(nguoiDungAdapter);
         nguoiDungAdapter.notifyDataSetChanged();
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

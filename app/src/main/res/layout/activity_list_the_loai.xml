@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
-    tools:context=".ListTheLoaiActivity"
+    tools:context=".Activity.ListTheLoaiActivity"
     android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
@@ -16,10 +15,10 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
         </androidx.appcompat.widget.Toolbar>
+
         <ListView
+            android:padding="8dp"
             android:id="@+id/lvTheLoai"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
-
 </LinearLayout>

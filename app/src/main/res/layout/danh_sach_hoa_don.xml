@@ -2,18 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="vertical">
 
-    <EditText
-        android:drawableRight="@drawable/ic_search_black_24dp"
-        android:id="@+id/edttimkiemhoadon"
-        android:hint="Tìm kiếm"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarhoadon"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
-    <ListView
-        android:id="@+id/lv_hoaDon"
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:padding="8dp"
+            android:background="@drawable/et_bg_black"
+            android:drawableRight="@drawable/ic_search_black_24dp"
+            android:id="@+id/edttimkiemhoadon"
+            android:hint="Tìm kiếm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:layout_marginTop="8dp"
+            android:id="@+id/lv_hoaDon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>

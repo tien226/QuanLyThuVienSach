@@ -1,10 +1,12 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.poly.duanmau.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ViewHoaDon(View view) {
-        Intent intent = new Intent(MainActivity.this, HoaDonActivity.class);
+        Intent intent = new Intent(MainActivity.this, ListHoaDonActivity.class);
         startActivity(intent);
     }
 

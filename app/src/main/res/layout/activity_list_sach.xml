@@ -5,8 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
-    tools:context=".ListSachActivity">
+    tools:context=".Activity.ListSachActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,16 +15,26 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <EditText
-        android:drawableRight="@drawable/ic_search_black_24dp"
-        android:id="@+id/edttimkiemsach"
-        android:hint="Tìm kiếm"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:padding="8dp"
+            android:background="@drawable/et_bg_black"
+            android:drawableRight="@drawable/ic_search_black_24dp"
+            android:id="@+id/edttimkiemsach"
+            android:hint="Nhập tên sách tìm kiếm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <ListView
+            android:layout_marginTop="8dp"
             android:id="@+id/lv_sach"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+    </LinearLayout>
 </LinearLayout>

@@ -48,7 +48,7 @@ public class SachAdapter extends BaseAdapter implements Filterable {
 
     public static class viewHolder {
         TextView tv_tenSach, tv_soLuong;
-        ImageView img_close_sach;
+//        ImageView img_close_sach;
     }
 
     @Override
@@ -60,22 +60,22 @@ public class SachAdapter extends BaseAdapter implements Filterable {
             holder = new viewHolder();
             holder.tv_tenSach = convertView.findViewById(R.id.ten_sach);
             holder.tv_soLuong = convertView.findViewById(R.id.Gia_ban_sach);
-            holder.img_close_sach = convertView.findViewById(R.id.close_sach);
+//            holder.img_close_sach = convertView.findViewById(R.id.close_sach);
             convertView.setTag(holder);
         } else {
             holder = (viewHolder) convertView.getTag();
         }
         holder.tv_tenSach.setText("Tên Sách: "+sach.getTenSach());
         holder.tv_soLuong.setText(String.valueOf("Số Lượng: "+sach.getSoLuong()));
-        holder.img_close_sach.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                DatabaseHelper databaseHelper = new DatabaseHelper(parent.getContext());
-                SachDao sachDAO = new SachDao(context);
-                sachDAO.deleteSach(sach.getMaSach());
-                changeDataset(sachDAO.getAllSach());
-            }
-        });
+//        holder.img_close_sach.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                DatabaseHelper databaseHelper = new DatabaseHelper(parent.getContext());
+//                SachDao sachDAO = new SachDao(context);
+//                sachDAO.deleteSach(sach.getMaSach());
+//                changeDataset(sachDAO.getAllSach());
+//            }
+//        });
         return convertView;
     }
 

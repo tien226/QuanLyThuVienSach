@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,6 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.NguoiDungDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
+import com.poly.duanmau.R;
 
 public class NguoiDungActivity extends AppCompatActivity {
     TextInputEditText edUser, edPassWord, edRePass, edPhone, edfullName;
@@ -26,11 +27,12 @@ public class NguoiDungActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nguoi_dung);
-        setTitle("Thêm Người dùng");
+        setTitle("Quản Lý Sách");
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         edUser = findViewById(R.id.edUser);
         edPassWord = findViewById(R.id.edPassWord);
         edRePass = findViewById(R.id.edRePassWord);
@@ -44,27 +46,24 @@ public class NguoiDungActivity extends AppCompatActivity {
 
     }
 
-
     public void btnthemnguoidung(View view) {
-
-        if (edUser.getText().toString().isEmpty()){
+        if (textInputLayoutedUser.getEditText().length() == 0){
             textInputLayoutedUser.setError("Không được bỏ trống!");
-        } else if (edPassWord.getText().toString().isEmpty()){
+        } else if (textInputLayoutedPassWord.getEditText().length() == 0){
             textInputLayoutedPassWord.setError("Không được bỏ trống!");
-        } else if (edRePass.getText().toString().isEmpty()){
+        } else if (textInputLayoutedRePass.getEditText().length()==0){
             textInputLayoutedRePass.setError("Không được bỏ trống!");
-        } else if (edPhone.getText().toString().isEmpty()){
+        } else if (textInputLayoutEdPhone.getEditText().length()==0){
             textInputLayoutEdPhone.setError("Không được bỏ trống!");
-        } else if (edfullName.getText().toString().isEmpty()){
+        } else if (textInputLayoutedfullName.getEditText().length()==0){
             textInputLayoutedfullName.setError("Không được bỏ trống!");
-        } else if (edPassWord.length()<6){
+        } else if (textInputLayoutedPassWord.getEditText().length() < 6){
             textInputLayoutedPassWord.setError("Bạn phải nhập mật khẩu ít nhất 6 kí tự!");
-        }else if (!edPassWord.getText().toString().equals(edRePass.getText().toString())){
-            Toast.makeText(this, "Mật khẩu nhập lại không trùng khớp!", Toast.LENGTH_SHORT).show();
-        }else if (edPhone.length()<10){
+        }else if (!textInputLayoutedRePass.getEditText().toString().equalsIgnoreCase(textInputLayoutedPassWord.getEditText().toString())){
+            textInputLayoutedRePass.setError("Mật khẩu nhập lại không trùng khớp!");
+        }else if (textInputLayoutEdPhone.getEditText().length() < 10){
             textInputLayoutEdPhone.setError("Bạn phải nhập số điện thoại ít nhất 10 kí tự!");
         }else {
-
             textInputLayoutedUser.setError("");
             textInputLayoutedPassWord.setError("");
             textInputLayoutedRePass.setError("");
@@ -78,12 +77,9 @@ public class NguoiDungActivity extends AppCompatActivity {
             nguoiDung.setPhone(edPhone.getText().toString());
             nguoiDung.setHoTen(edfullName.getText().toString());
 
-            long themnguoidung = nguoiDungDAO.insertNguoiDung(nguoiDung);
-            if (themnguoidung >0){
+            if (nguoiDungDAO.insertNguoiDung(nguoiDung) >0){
                 Toast.makeText(getApplicationContext(),"Thêm Người dùng thành công",Toast.LENGTH_LONG).show();
-            }
-            else
-            {
+            }else {
                 Toast.makeText(getApplicationContext(),"Thêm Người dùng không thành công!",Toast.LENGTH_LONG).show();
             }
         }
@@ -95,11 +91,7 @@ public class NguoiDungActivity extends AppCompatActivity {
         edRePass.setText("");
         edPhone.setText("");
         edPassWord.setText("");
-        textInputLayoutedUser.setError("");
-        textInputLayoutedPassWord.setError("");
-        textInputLayoutedRePass.setError("");
-        textInputLayoutEdPhone.setError("");
-        textInputLayoutedfullName.setError("");
+        startActivity(new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class));
     }
 
     public void btndsnguoidung(View view) {

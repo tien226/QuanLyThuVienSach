@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import com.poly.duanmau.DAO.TheLoaiDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.NguoiDung;
 import com.poly.duanmau.Model.TheLoai;
+import com.poly.duanmau.R;
 
 public class TheLoaiActivity extends AppCompatActivity {
     EditText edt_matheloai, edt_tentheloai, edt_vitri, edt_mota;
@@ -35,11 +36,11 @@ public class TheLoaiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_loai);
-        setTitle("Thêm Thể Loại");
+        setTitle("Quản Lý Sách");
         toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_matheloai = findViewById(R.id.edt_maTheLoai);
         edt_tentheloai = findViewById(R.id.edt_tenTheLoai);
@@ -52,15 +53,14 @@ public class TheLoaiActivity extends AppCompatActivity {
     }
 
     public void btnthemtheloai(View view) {
-        if (edt_matheloai.getText().toString().isEmpty()){
+        if (textInputLayoutEdt_maTheLoai.getEditText().length()==0){
             textInputLayoutEdt_maTheLoai.setError("Không được bỏ trống!");
-        } else if (edt_tentheloai.getText().toString().isEmpty()){
+        } else if (textInputLayoutEdt_tenTheLoai.getEditText().length()==0){
             textInputLayoutEdt_tenTheLoai.setError("Không được bỏ trống!");
-        } else if (edt_mota.getText().toString().isEmpty()){
+        } else if (textInputLayoutEdt_moTa.getEditText().length()==0){
             textInputLayoutEdt_moTa.setError("Không được bỏ trống!");
-        } else if (edt_vitri.getText().toString().isEmpty()){
+        } else if (textInputLayoutEdt_viTri.getEditText().length()==0){
             textInputLayoutEdt_viTri.setError("Không được bỏ trống!");
-
         }  else {
 
             textInputLayoutEdt_maTheLoai.setError("");
@@ -69,15 +69,12 @@ public class TheLoaiActivity extends AppCompatActivity {
             textInputLayoutEdt_viTri.setError("");
 
             theLoaiDAO = new TheLoaiDao(TheLoaiActivity.this);
-
             TheLoai theLoai = new TheLoai();
             theLoai.setMaTheLoai(edt_matheloai.getText().toString());
             theLoai.setTenTheLoai(edt_tentheloai.getText().toString());
             theLoai.setMoTa(edt_mota.getText().toString());
             theLoai.setViTri(Integer.valueOf(edt_vitri.getText().toString()));
-
-            long themtheloai = theLoaiDAO.insertTheLoai(theLoai);
-            if (themtheloai > 0){
+            if (theLoaiDAO.insertTheLoai(theLoai) > 0){
                 Toast.makeText(this, "Thêm thể loại thành công", Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(this, "Thêm thể loại không thành công!", Toast.LENGTH_SHORT).show();
@@ -90,6 +87,7 @@ public class TheLoaiActivity extends AppCompatActivity {
         edt_tentheloai.setText("");
         edt_vitri.setText("");
         edt_mota.setText("");
+        startActivity(new Intent(TheLoaiActivity.this,ListTheLoaiActivity.class));
     }
 
     public void btndstheloai(View view) {

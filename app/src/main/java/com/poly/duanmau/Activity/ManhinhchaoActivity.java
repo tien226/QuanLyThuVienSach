@@ -1,4 +1,4 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.poly.duanmau.R;
 
 public class ManhinhchaoActivity extends AppCompatActivity {
 
@@ -20,8 +21,9 @@ public class ManhinhchaoActivity extends AppCompatActivity {
         TextView wellcomlibrary = (TextView) findViewById(R.id.Et_title);
         ImageView iconlibrary = (ImageView) findViewById(R.id.icon_library);
         ImageView Loading_library = findViewById(R.id.loading_library);
+
         Glide.with(this).load(R.drawable.loading).into(Loading_library);
-        // Loading_library.setImageResource();
+//         Loading_library.setImageResource();
         iconlibrary.setImageResource(R.drawable.splash1);
         wellcomlibrary.setText("\"Chào mừng bạn đến với ứng dụng quản lý thư viện\"");
         new Handler().postDelayed(new Runnable() {

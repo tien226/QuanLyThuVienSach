@@ -1,6 +1,7 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +15,10 @@ import android.widget.Toast;
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
 import com.poly.duanmau.DAO.HoaDonDao;
 import com.poly.duanmau.DAO.SachDao;
-import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.HoaDon;
 import com.poly.duanmau.Model.HoaDonChiTiet;
 import com.poly.duanmau.Model.Sach;
+import com.poly.duanmau.R;
 
 import java.util.List;
 
@@ -25,17 +26,21 @@ public class ThemHDCTActivity extends AppCompatActivity {
     EditText edt_mahd_HDCT, edt_masach_HDCT, edt_soluong_HDCT;
     TextView tv_thanhtoan_HDCT;
     Button btn_themHDCT, btn_thanhtoanHDCT;
-//    DatabaseHelper databaseHelper;
     HoaDonDao hoaDonDAO;
     SachDao sachDAO;
     HoaDonChiTietDao hoaDonChiTietDAO;
     int soluong;
+    Toolbar toolbarhdct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_hdct);
-        setTitle("Thêm hóa đơn chi tiết");
+        setTitle("Quản Lý Sách");
+        toolbarhdct = findViewById(R.id.toolbar_hdct);
+        setSupportActionBar(toolbarhdct);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         edt_mahd_HDCT = findViewById(R.id.edt_mahd_HDCT);
         edt_masach_HDCT = findViewById(R.id.edt_masach_HDCT);
         edt_soluong_HDCT = findViewById(R.id.edt_soluong_HDCT);

@@ -1,6 +1,7 @@
-package com.poly.duanmau;
+package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.poly.duanmau.DAO.HoaDonDao;
 import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.HoaDon;
+import com.poly.duanmau.R;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -25,17 +27,24 @@ public class Them_Hoa_Don_Activity extends AppCompatActivity {
     Button btn_pickDate, btn_themHD;
     DatabaseHelper databaseHelper;
     HoaDonDao hoaDonDAO;
+    Toolbar toolbarhoadon;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.them_hoa_don);
-        setTitle("Thêm hóa đơn");
+        setTitle("Quản Lý Sách");
+        toolbarhoadon = findViewById(R.id.toolbar_hoadon);
+        setSupportActionBar(toolbarhoadon);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         tv_mahoadon = findViewById(R.id.edt_maHoaDon);
         tv_ngaymua = findViewById(R.id.tv_ngayMuaHD);
         btn_pickDate = findViewById(R.id.btn_picDate);
         btn_themHD = findViewById(R.id.btn_themHD);
+
+
+
         btn_pickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +98,7 @@ public class Them_Hoa_Don_Activity extends AppCompatActivity {
     }
 
     public void btndshoadon(View view) {
-        Intent intent=new Intent(Them_Hoa_Don_Activity.this,HoaDonActivity.class);
+        Intent intent=new Intent(Them_Hoa_Don_Activity.this, ListHoaDonActivity.class);
         startActivity(intent);
     }
 }
