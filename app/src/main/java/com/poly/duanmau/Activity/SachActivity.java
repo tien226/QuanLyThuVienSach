@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.SachDao;
 import com.poly.duanmau.DAO.TheLoaiDao;
 import com.poly.duanmau.Model.Sach;
@@ -33,6 +34,8 @@ public class SachActivity extends AppCompatActivity {
     TheLoaiDao theLoaiDao;
     List<TheLoai> theLoaiList = new ArrayList<>();
     Toolbar toolbar;
+    TextInputLayout textInputLayoutMaSach, textInputLayoutTenSach, textInputLayoutTacGia, textInputLayoutNXB,
+            textInputLayoutGiaBia, textInputLayoutSoLuong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,13 @@ public class SachActivity extends AppCompatActivity {
         edt_soLuong = findViewById(R.id.edt_soLuong);
         edt_giaBan = findViewById(R.id.edt_giaBan);
         spinner_theloai = findViewById(R.id.spTheLoai);
+        textInputLayoutMaSach = findViewById(R.id.textInputLayoutMaSach);
+        textInputLayoutTenSach = findViewById(R.id.textInputLayoutTenSach);
+        textInputLayoutTacGia = findViewById(R.id.textInputLayoutTacGia);
+        textInputLayoutNXB = findViewById(R.id.textInputLayoutNXB);
+        textInputLayoutGiaBia = findViewById(R.id.textInputLayoutGiaBia);
+        textInputLayoutSoLuong = findViewById(R.id.textInputLayoutSoLuong);
+
 
         //button thêm sách
         btnthem_sach.setOnClickListener(new View.OnClickListener() {
@@ -63,9 +73,26 @@ public class SachActivity extends AppCompatActivity {
                 btnthem_sach.startAnimation(animation);
 
                 int check =0;
-                if (edt_maSach.getText().toString().isEmpty()||edt_tenSach.getText().toString().isEmpty()||edt_tacGia.getText().toString().isEmpty()||edt_nxb.getText().toString().isEmpty()||edt_giaBan.getText().toString().isEmpty()||edt_soLuong.getText().toString().isEmpty()){
-                    Toast.makeText(SachActivity.this, "Bạn phải nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                if (textInputLayoutMaSach.getEditText().length() == 0){
+                    textInputLayoutMaSach.setError("Không được bỏ trống!");
+                } else if (textInputLayoutTenSach.getEditText().length() == 0){
+                    textInputLayoutTenSach.setError("Không được bỏ trống!");
+                } else if (textInputLayoutTacGia.getEditText().length()==0){
+                    textInputLayoutTacGia.setError("Không được bỏ trống!");
+                } else if (textInputLayoutNXB.getEditText().length()==0){
+                    textInputLayoutNXB.setError("Không được bỏ trống!");
+                } else if (textInputLayoutGiaBia.getEditText().length()==0){
+                    textInputLayoutGiaBia.setError("Không được bỏ trống!");
+                } else if (textInputLayoutSoLuong.getEditText().length() ==0){
+                    textInputLayoutSoLuong.setError("Không được bỏ trống!");
                 } else {
+                    textInputLayoutMaSach.setError("");
+                    textInputLayoutTenSach.setError("");
+                    textInputLayoutTacGia.setError("");
+                    textInputLayoutNXB.setError("");
+                    textInputLayoutGiaBia.setError("");
+                    textInputLayoutSoLuong.setError("");
+
                     sachDAO = new SachDao(SachActivity.this);
                     Sach sach = new Sach();
                     sach.setMaSach(edt_maSach.getText().toString());

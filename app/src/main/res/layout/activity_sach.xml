@@ -6,17 +6,15 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme">
-    </androidx.appcompat.widget.Toolbar>
+        android:theme="?attr/actionBarTheme"
+        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:layout_marginTop="24dp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
@@ -31,15 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutMaSach"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_maSach"
-            android:hint="Mã sách"
-            android:layout_marginTop="20dp" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_maSach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Mã sách" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <LinearLayout
-            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="4dp"
             android:weightSum="3"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -57,41 +65,73 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/edt_tenSach"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTenSach"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tên sách" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_tacGia"
-            android:hint="Tác giả"
-            android:layout_marginTop="20dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tenSach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên sách" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTacGia"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_nxb"
-            android:hint="Nhà xuất bản"
-            android:layout_marginTop="20dp" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_giaBan"
-            android:inputType="number"
-            android:hint="Giá bìa"
-            android:layout_marginTop="20dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tacGia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Tác giả" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutNXB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_soLuong"
-            android:hint="Số lượng sách"
-            android:inputType="number"
-            android:layout_marginTop="20dp" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nxb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Nhà xuất bản" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutGiaBia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_giaBan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Giá bìa"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutSoLuong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_soLuong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Số lượng sách"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
         <LinearLayout
