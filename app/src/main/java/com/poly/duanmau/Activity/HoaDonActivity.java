@@ -14,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.HoaDonDao;
 import com.poly.duanmau.Model.HoaDon;
 import com.poly.duanmau.R;
@@ -28,6 +29,7 @@ public class HoaDonActivity extends AppCompatActivity {
     Button btn_pickDate, btn_themHD, btnds_hd;
     HoaDonDao hoaDonDAO;
     Toolbar toolbarhoadon;
+    TextInputLayout textInputLayoutMaHD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class HoaDonActivity extends AppCompatActivity {
         btn_pickDate = findViewById(R.id.btn_picDate);
         btn_themHD = findViewById(R.id.btnthem_HoaDon);
         btnds_hd = findViewById(R.id.btndanhsach_HoaDon);
+        textInputLayoutMaHD = findViewById(R.id.textInputLayoutMaHD);
+
 
         //button chọn ngày
         btn_pickDate.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +90,10 @@ public class HoaDonActivity extends AppCompatActivity {
                 hoaDon.setMaHoaDon(tv_mahoadon.getText().toString());
                 hoaDon.setNgayMua(date);
 
-                if (tv_mahoadon.getText().toString().isEmpty()||tv_ngaymua.getText().toString().isEmpty()){
-                    Toast.makeText(HoaDonActivity.this, "Bạn phải nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                if (textInputLayoutMaHD.getEditText().length() == 0){
+                    textInputLayoutMaHD.setError("Bạn phải nhập đầy đủ thông tin!");
                 }else {
+                    textInputLayoutMaHD.setError("");
                     hoaDonDAO = new HoaDonDao(HoaDonActivity.this);
                     long value = hoaDonDAO.insertHoaDon(hoaDon);
                     if (value > 0) {

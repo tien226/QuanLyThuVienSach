@@ -31,13 +31,21 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edt_maHoaDon"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Mã hóa đơn" />
+            app:counterEnabled="true"
+            android:id="@+id/textInputLayoutMaHD">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_maHoaDon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Mã hóa đơn" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <LinearLayout
             android:weightSum="3"

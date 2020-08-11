@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
 import com.poly.duanmau.DAO.HoaDonDao;
 import com.poly.duanmau.DAO.SachDao;
@@ -33,6 +34,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
     HoaDonChiTietDao hoaDonChiTietDAO;
     int soluong;
     Toolbar toolbarhdct;
+    TextInputLayout textInputLayoutMaHDCT, textInputLayoutMaSach, textInputLayoutSoLuong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,10 @@ public class ThemHDCTActivity extends AppCompatActivity {
         tv_thanhtoan_HDCT = findViewById(R.id.tv_thanhTienHDCT);
         btn_themHDCT = findViewById(R.id.btn_themHDCT);
         btn_thanhtoanHDCT = findViewById(R.id.btn_thanhtoanHDCT);
+
+        textInputLayoutMaHDCT = findViewById(R.id.textInputLayoutMaHDCT);
+        textInputLayoutMaSach = findViewById(R.id.textInputLayoutMaSach);
+        textInputLayoutSoLuong = findViewById(R.id.textInputLayoutSoLuong);
 
         //lấy thông tin mã hóa đơn
         Intent intent = getIntent();
@@ -82,9 +88,13 @@ public class ThemHDCTActivity extends AppCompatActivity {
                         s = sachs.get(i);
                     }
                 }
-                if (edt_mahd_HDCT.getText().toString().isEmpty()||edt_soluong_HDCT.getText().toString().isEmpty()){
-                    Toast.makeText(ThemHDCTActivity.this, "YBạn phải nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                if (textInputLayoutMaHDCT.getEditText().length() == 0) {
+                    textInputLayoutMaHDCT.setError("Không được bỏ trống!");
+                }else if (textInputLayoutSoLuong.getEditText().length()==0){
+                    textInputLayoutSoLuong.setError("Không được bỏ trống!");
                 }else {
+                    textInputLayoutMaHDCT.setError("");
+                    textInputLayoutSoLuong.setError("");
                     HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(1, hd, s, Integer.valueOf(edt_soluong_HDCT.getText().toString()));
                     long t = hoaDonChiTietDAO.insertHDCT(hoaDonChiTiet);
                     if (t > 0) {
