@@ -35,6 +35,7 @@ public class SachDao {
         sqLiteDatabase=databaseHelper.getWritableDatabase();
     }
 
+    //thêm sách
     public long insertSach(Sach sach) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_SACH, sach.getMaSach());
@@ -48,6 +49,7 @@ public class SachDao {
         return sqLiteDatabase.insert(TABLE_SACH, null, contentValues);
     }
 
+    //sửa sách
     public long updateSach(String masach,Sach sach) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_SACH, sach.getMaSach());
@@ -61,12 +63,13 @@ public class SachDao {
         return sqLiteDatabase.update(TABLE_SACH, contentValues, COLUMN_MA_SACH + "=?", new String[]{masach});
     }
 
+    //xóa sách
     public long deleteSach(String masach) {
         return sqLiteDatabase.delete(TABLE_SACH, COLUMN_MA_SACH + "=?", new String[]{masach});
     }
 
+    //lấy danh sách các sách
     public List<Sach> getAllSach() {
-//        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
         List<Sach> sachList = new ArrayList<>();
         String Select = "SELECT * FROM " + TABLE_SACH;
         Cursor cursor = sqLiteDatabase.rawQuery(Select, null);

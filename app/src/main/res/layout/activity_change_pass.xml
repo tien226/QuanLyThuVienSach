@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:background="@drawable/backgroud"
     tools:context=".Activity.ChangePassActivity">
+
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,77 +18,92 @@
         android:theme="?attr/actionBarTheme">
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <TextView
         android:layout_marginTop="24dp"
-        android:src="@drawable/nguoidung2" />
-    <com.google.android.material.textfield.TextInputLayout
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="THÊM NGƯỜI DÙNG"
+        android:textSize="32dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:counterMaxLength="20"
-        app:counterEnabled="true"
-        android:id="@+id/textInputLayoutEdUser">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_changeUser"
-            android:hint="Tên đăng nhập" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:counterMaxLength="20"
-        app:counterEnabled="true"
-        android:id="@+id/textInputLayoutPass">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:id="@+id/edt_changePass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Mật khẩu" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:counterMaxLength="20"
-        app:counterEnabled="true"
-        android:id="@+id/textInputLayoutRePass">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:id="@+id/edt_changeRePass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nhắc lại mật khẩu" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:orientation="horizontal">
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/btn_ChangePassWord"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đổi mật khẩu"
-            android:onClick="changePass"/>
+            app:counterEnabled="true"
+            android:id="@+id/textInputLayoutEdUser">
 
-        <Button
-            android:onClick="btnhuypass"
-            android:layout_weight="1"
-            android:id="@+id/btn_Cancel_ChangePassWord"
-            android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_changeUser"
+                android:hint="Tên đăng nhập" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hủy" />
+            app:counterMaxLength="8"
+            app:counterEnabled="true"
+            android:id="@+id/textInputLayoutPass">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
+                android:id="@+id/edt_changePass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mật khẩu" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterMaxLength="8"
+            app:counterEnabled="true"
+            android:id="@+id/textInputLayoutRePass">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
+                android:id="@+id/edt_changeRePass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhắc lại mật khẩu" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginRight="8dp"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/backgroud_btn"
+                android:layout_weight="1"
+                android:id="@+id/btndoimk_ChangePassWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đổi mật khẩu"/>
+
+            <Button
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/backgroud_btn"
+                android:layout_weight="1"
+                android:id="@+id/btnthoat_ChangePassWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thoát" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

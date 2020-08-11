@@ -29,6 +29,7 @@ public class HoaDonDao {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
     }
 
+    //thêm hóa đơn
     public long insertHoaDon(HoaDon hoaDon) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_HD, hoaDon.getMaHoaDon());
@@ -37,6 +38,7 @@ public class HoaDonDao {
         return sqLiteDatabase.insert(TABLE_HOADON, null, contentValues);
     }
 
+    //sửa hóa đơn
     public long updateHoaDon(HoaDon hoaDon) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_HD, hoaDon.getMaHoaDon());
@@ -45,12 +47,13 @@ public class HoaDonDao {
         return sqLiteDatabase.update(TABLE_HOADON, contentValues, COLUMN_MA_HD + "=?", new String[]{hoaDon.getMaHoaDon()});
     }
 
+    //xóa hóa đơn
     public long deleteHoaDon(String mahoadon) {
         return sqLiteDatabase.delete(TABLE_HOADON, COLUMN_MA_HD + "=?", new String[]{mahoadon});
     }
 
+    //lấy toàn bộ danh sách hóa đơn
     public List<HoaDon> getAllHoaDon() {
-//        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
         List<HoaDon> hoaDonList = new ArrayList<>();
         String Select = "SELECT * FROM " + TABLE_HOADON;
         Cursor cursor = sqLiteDatabase.rawQuery(Select, null);

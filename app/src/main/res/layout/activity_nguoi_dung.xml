@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,8 +124,7 @@
                 android:layout_marginRight="8dp"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:onClick="btnthemnguoidung"
-                android:id="@+id/btn_themND"
+                android:id="@+id/btnthem_nguoidung"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -133,8 +133,7 @@
             <Button
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:id="@+id/btn_huyND"
-                android:onClick="btnhuynguoidung"
+                android:id="@+id/btnhuy_nguoidung"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -145,8 +144,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/backgroud_btn"
-            android:id="@+id/btn_ds_ND"
-            android:onClick="btndsnguoidung"
+            android:id="@+id/btnds_nguoidung"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

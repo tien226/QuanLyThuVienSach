@@ -30,6 +30,7 @@ public class NguoiDungDao {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
     }
 
+    // thêm người dùng
     public long insertNguoiDung(NguoiDung nguoiDung) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_USER_NAME, nguoiDung.getUserName());
@@ -40,6 +41,7 @@ public class NguoiDungDao {
         return sqLiteDatabase.insert(TABLE_NGUOIDUNG, null, contentValues);
     }
 
+    //sửa người dùng
     public long updateNguoiDung(String username,NguoiDung nguoiDung) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_USER_NAME, nguoiDung.getUserName());
@@ -50,12 +52,13 @@ public class NguoiDungDao {
         return sqLiteDatabase.update(TABLE_NGUOIDUNG, contentValues, COLUMN_USER_NAME + "=?", new String[]{username});
     }
 
+    //xóa người dùng
     public long deleteNguoiDung(String username) {
         return sqLiteDatabase.delete(TABLE_NGUOIDUNG, COLUMN_USER_NAME + "=?", new String[]{username});
     }
 
+    // lấy toàn bộ danh sách người dùng
     public List<NguoiDung> getAllNguoiDung() {
-//        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
         List<NguoiDung> nguoiDungList = new ArrayList<>();
         String Select = "SELECT * FROM " + TABLE_NGUOIDUNG;
         Cursor cursor = sqLiteDatabase.rawQuery(Select, null);
@@ -73,6 +76,7 @@ public class NguoiDungDao {
         return nguoiDungList;
     }
 
+    // đổi pass
     public int changePasswordNguoiDung(NguoiDung nd) {
         ContentValues values = new ContentValues();
         values.put("username", nd.getUserName());

@@ -30,6 +30,7 @@ public class TheLoaiDao {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
     }
 
+    //thêm thể loại
     public long insertTheLoai(TheLoai theLoai) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_TL, theLoai.getMaTheLoai());
@@ -39,6 +40,7 @@ public class TheLoaiDao {
         return sqLiteDatabase.insert(TABLE_THELOAI, null, contentValues);
     }
 
+    // sửa thể loại
     public long updateTheLoai(String matheloai,TheLoai theLoai) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_TL, theLoai.getMaTheLoai());
@@ -48,12 +50,12 @@ public class TheLoaiDao {
         return sqLiteDatabase.update(TABLE_THELOAI, contentValues, COLUMN_MA_TL + "=?", new String[]{matheloai});
     }
 
+    // xóa thể loại
     public long deleteTheLoai(String matheloai) {
         return sqLiteDatabase.delete(TABLE_THELOAI, COLUMN_MA_TL + "=?", new String[]{matheloai});
     }
 
     public List<TheLoai> getAllTheLoai() {
-//        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
         List<TheLoai> theLoaiList = new ArrayList<>();
         String Select = "SELECT * FROM " + TABLE_THELOAI;
         Cursor cursor = sqLiteDatabase.rawQuery(Select, null);

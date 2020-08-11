@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,7 +105,7 @@
                 android:layout_marginRight="8dp"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:onClick="btnthemsach"
+                android:id="@+id/btnthem_Sach"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,7 +114,7 @@
             <Button
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:onClick="btnhuysach"
+                android:id="@+id/btnthoat_Sach"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,7 +125,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/backgroud_btn"
-            android:onClick="btndssach"
+            android:id="@+id/btndanhsach_Sach"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -7,19 +7,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:src="@drawable/nguoidung2" />
+    <TextView
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CẬP NHẬT THÔNG TIN"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="#FF0000" />
 
     <EditText
+        android:padding="16dp"
+        android:background="@drawable/et_bg_black"
+        android:layout_marginTop="24dp"
         android:hint="Số điện thoại"
         android:id="@+id/edtsuaphonenguoidung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:background="@drawable/et_bg_black"
         android:hint="Họ tên"
         android:id="@+id/edtsuahotennguoidung"
         android:layout_width="match_parent"

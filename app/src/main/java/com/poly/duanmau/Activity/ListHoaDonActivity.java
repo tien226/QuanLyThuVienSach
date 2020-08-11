@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.loader.app.LoaderManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,7 +21,6 @@ import android.widget.Toast;
 
 import com.poly.duanmau.Adapter.HoaDonAdapter;
 import com.poly.duanmau.DAO.HoaDonDao;
-import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.Model.HoaDon;
 import com.poly.duanmau.R;
 
@@ -30,7 +28,6 @@ import java.util.List;
 
 public class ListHoaDonActivity extends AppCompatActivity {
     ListView lv_hoadon;
-    DatabaseHelper databaseHelper;
     EditText edttimhoadon;
     HoaDonDao hoaDonDAO;
     HoaDonAdapter hoaDonAdapter;
@@ -45,7 +42,6 @@ public class ListHoaDonActivity extends AppCompatActivity {
         lv_hoadon = findViewById(R.id.lv_hoaDon);
         edttimhoadon=findViewById(R.id.edttimkiemhoadon);
         toolbar = findViewById(R.id.toolbarhoadon);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -98,7 +94,7 @@ public class ListHoaDonActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.themmenu){
-            Intent intent = new Intent(ListHoaDonActivity.this,Them_Hoa_Don_Activity.class);
+            Intent intent = new Intent(ListHoaDonActivity.this, HoaDonActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

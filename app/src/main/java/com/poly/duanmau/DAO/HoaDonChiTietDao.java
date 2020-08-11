@@ -35,6 +35,7 @@ public class HoaDonChiTietDao {
         sqLiteDatabase = databaseHelper.getWritableDatabase();
     }
 
+    // thêm hdct
     public long insertHDCT(HoaDonChiTiet hoaDonChiTiet) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_HD, hoaDonChiTiet.getHoaDon().getMaHoaDon());
@@ -44,6 +45,7 @@ public class HoaDonChiTietDao {
         return sqLiteDatabase.insert(TABLE_HODONCHITIET, null, contentValues);
     }
 
+    // sửa hdct
     public long updateHDCT(HoaDonChiTiet hoaDonChiTiet) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_MA_HD, hoaDonChiTiet.getHoaDon().getMaHoaDon());
@@ -53,12 +55,13 @@ public class HoaDonChiTietDao {
         return sqLiteDatabase.update(TABLE_HODONCHITIET, contentValues, COLUMN_MA_HDCT + "=?", new String[]{String.valueOf(hoaDonChiTiet.getMaHDCT())});
     }
 
+    //xóa hdct
     public long deleteHDCT(String maHDCT) {
         return sqLiteDatabase.delete(TABLE_HODONCHITIET, COLUMN_MA_HDCT + "=?", new String[]{maHDCT});
     }
 
+    // lấy toàn bộ danh sách
     public List<HoaDonChiTiet> getAllHoaDonChiTiet() {
-//        SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
         List<HoaDonChiTiet> dsHoaDonChiTiet = new ArrayList<>();
         String sSQL = "SELECT mahoadonchitiet, hoadon.mahoadon,hoadon.ngaymua, "
                 + "sach.masach, sach.matheloai, sach.tensach, sach.tacgia, sach.nxb, sach.giaban, "
@@ -86,6 +89,7 @@ public class HoaDonChiTietDao {
         return dsHoaDonChiTiet;
     }
 
+    //thống kê doanh thu theo ngày
     public double getDoanhThuTheoNgay() {
         double doanhThu = 0;
         String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(sach.giaban * hoadonchitiet.soluongmua) as 'tongtien' " +
@@ -103,6 +107,7 @@ public class HoaDonChiTietDao {
         return doanhThu;
     }
 
+    //thống kê doanh thu theo tháng
     public double getDoanhThuTheoThang() {
         double doanhThu = 0;
         String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(sach.giaban * hoadonchitiet.soluongmua) as" +
@@ -120,6 +125,7 @@ public class HoaDonChiTietDao {
         return doanhThu;
     }
 
+    //thống kê doanh thu theo năm
     public double getDoanhThuTheoNam() {
         double doanhThu = 0;
         String sSQL = "SELECT SUM(tongtien) from (SELECT SUM(sach.giaban * hoadonchitiet.soluongmua) as" +

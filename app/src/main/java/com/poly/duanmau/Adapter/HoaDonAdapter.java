@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -51,7 +53,6 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
     public static class viewHolder {
         TextView tv_mahoadon;
         TextView ngay_mua;
-//        ImageView close_hoadon;
     }
 
     @Override
@@ -63,7 +64,7 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
             holder = new viewHolder();
             holder.tv_mahoadon = convertView.findViewById(R.id.maHoaDon);
             holder.ngay_mua = convertView.findViewById(R.id.ngayHD);
-//            holder.close_hoadon = convertView.findViewById(R.id.close_hoaDon);
+
             convertView.setTag(holder);
         } else {
             holder = (viewHolder) convertView.getTag();
@@ -74,15 +75,10 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
         String s = formatter.format(hoaDon.getNgayMua());
         holder.ngay_mua.setText("Ngày Mua Hóa Đơn: "+s);
 
-//        holder.close_hoadon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                DatabaseHelper databaseHelper = new DatabaseHelper(parent.getContext());
-//                HoaDonDao hoaDonDAO = new HoaDonDao(context);
-//                hoaDonDAO.deleteHoaDon(hoaDon.getMaHoaDon());
-//                changeDataset(hoaDonDAO.getAllHoaDon());
-//            }
-//        });
+
+        //hiệu ứng listview
+        Animation animation = AnimationUtils.loadAnimation(context,R.anim.scale_list);
+        convertView.startAnimation(animation);
         return convertView;
     }
 

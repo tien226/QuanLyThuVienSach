@@ -1,10 +1,14 @@
 package com.poly.duanmau.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.poly.duanmau.Adapter.HoaDonChiTietAdapter;
@@ -17,9 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HDCTActivity extends AppCompatActivity {
+    Toolbar toolbarhdct;
     HoaDonChiTietAdapter hoaDonChiTietAdapter;
     ListView lv_hdct;
-    DatabaseHelper databaseHelper;
     HoaDonChiTiet hoaDonChiTiet = null;
     HoaDonChiTietDao hoaDonChiTietDAO;
     List<HoaDonChiTiet> myList = new ArrayList<>();
@@ -29,12 +33,15 @@ public class HDCTActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hdct);
         setTitle("Hóa đơn chi tiết");
+        toolbarhdct = findViewById(R.id.toolbar_hoadon);
+        setSupportActionBar(toolbarhdct);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         lv_hdct = findViewById(R.id.lv_hdct);
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("datagui");
         String maHDnhan = bundle.getString("maHDgui");
         Log.e("mã hóa đơn đã nhận: ", " " + maHDnhan);
-//        databaseHelper = new DatabaseHelper(HDCTActivity.this);
         hoaDonChiTietDAO = new HoaDonChiTietDao(HDCTActivity.this);
         List<HoaDonChiTiet> hoaDonChiTietList = hoaDonChiTietDAO.getAllHoaDonChiTiet();
         for (int i = 0; i < hoaDonChiTietList.size(); i++) {
@@ -48,20 +55,4 @@ public class HDCTActivity extends AppCompatActivity {
         lv_hdct.setAdapter(hoaDonChiTietAdapter);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//
-//        getMenuInflater().inflate(R.menu.menu_them,menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        if (id==R.id.themmenu){
-//            Intent intent = new Intent(HDCTActivity.this,ThemHDCTActivity.class);
-//            startActivity(intent);
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 }

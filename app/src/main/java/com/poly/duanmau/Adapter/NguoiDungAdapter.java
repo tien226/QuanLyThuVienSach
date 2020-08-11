@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,7 +42,6 @@ public class NguoiDungAdapter extends BaseAdapter {
 
     public static class viewHolder {
         TextView phone, hoTen;
-        ImageView icon_delete;
     }
 
     @Override
@@ -58,16 +59,10 @@ public class NguoiDungAdapter extends BaseAdapter {
         holder.hoTen.setText("Họ tên: "+nguoiDungList.get(position).getHoTen());
         holder.phone.setText("SĐT: "+nguoiDungList.get(position).getPhone());
 
-        // Xóa dữ liệu
-//        holder.icon_delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                DatabaseHelper databaseHelper = new DatabaseHelper(parent.getContext());
-//                NguoiDungDao nguoiDungDAO = new NguoiDungDao(context);
-//                nguoiDungDAO.deleteNguoiDung(nguoiDungList.get(position).getUserName());
-//                changeDataset(nguoiDungDAO.getAllNguoiDung());
-//            }
-//        });
+
+        //hiệu ứng listview
+        Animation animation = AnimationUtils.loadAnimation(context,R.anim.scale_list);
+        convertView.startAnimation(animation);
         return convertView;
     }
 

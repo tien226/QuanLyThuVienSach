@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,8 +101,7 @@
                 android:layout_marginRight="8dp"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:id="@+id/btn_them_tl"
-                android:onClick="btnthemtheloai"
+                android:id="@+id/btnthem_theloai"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,8 +110,7 @@
             <Button
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/backgroud_btn"
-                android:id="@+id/btn_huy_tl"
-                android:onClick="btnhuytheloai"
+                android:id="@+id/btnhuy_theloai"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,8 +121,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/backgroud_btn"
-            android:id="@+id/btn_show_tl"
-            android:onClick="btndstheloai"
+            android:id="@+id/btnds_theloai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="danh sách thể loại" />

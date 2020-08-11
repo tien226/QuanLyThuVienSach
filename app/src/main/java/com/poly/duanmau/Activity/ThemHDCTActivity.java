@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,39 +43,27 @@ public class ThemHDCTActivity extends AppCompatActivity {
         setSupportActionBar(toolbarhdct);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        //ánh xạ
         edt_mahd_HDCT = findViewById(R.id.edt_mahd_HDCT);
         edt_masach_HDCT = findViewById(R.id.edt_masach_HDCT);
         edt_soluong_HDCT = findViewById(R.id.edt_soluong_HDCT);
         tv_thanhtoan_HDCT = findViewById(R.id.tv_thanhTienHDCT);
         btn_themHDCT = findViewById(R.id.btn_themHDCT);
         btn_thanhtoanHDCT = findViewById(R.id.btn_thanhtoanHDCT);
+
+        //lấy thông tin mã hóa đơn
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("dataHD");
         final String maHD = bundle.getString("maHD");
         edt_mahd_HDCT.setText(maHD);
 
-        btn_thanhtoanHDCT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (timHoaDon(maHD) == 0) {
-                    Toast.makeText(ThemHDCTActivity.this, "Không tìm thấy mã hóa đơn", Toast.LENGTH_SHORT).show();
-                }
-                String masach = edt_masach_HDCT.getText().toString();
-                soluong = Integer.valueOf(edt_soluong_HDCT.getText().toString());
-                double a = timSach(masach, soluong);
-                if (a == 2) {
-                    Toast.makeText(ThemHDCTActivity.this, "Quá số lượng hiện có", Toast.LENGTH_SHORT).show();
-                }
-                if (a != 0 && a != 2) {
-                    double thanhtien = a * soluong;
-                    tv_thanhtoan_HDCT.setText("Thành tiền : " + thanhtien);
-                }
-            }
-        });
+        //button thêm hdct
         btn_themHDCT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                databaseHelper = new DatabaseHelper(ThemHDCTActivity.this);
+                Animation animation = AnimationUtils.loadAnimation(ThemHDCTActivity.this,R.anim.alpha_click);
+                btn_themHDCT.startAnimation(animation);
+
                 hoaDonChiTietDAO = new HoaDonChiTietDao(ThemHDCTActivity.this);
                 hoaDonDAO = new HoaDonDao(ThemHDCTActivity.this);
                 sachDAO = new SachDao(ThemHDCTActivity.this);
@@ -106,11 +96,34 @@ public class ThemHDCTActivity extends AppCompatActivity {
 
             }
         });
+
+        // buton thanh toán hdct
+        btn_thanhtoanHDCT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(ThemHDCTActivity.this,R.anim.alpha_click);
+                btn_thanhtoanHDCT.startAnimation(animation);
+
+                if (timHoaDon(maHD) == 0) {
+                    Toast.makeText(ThemHDCTActivity.this, "Không tìm thấy mã hóa đơn", Toast.LENGTH_SHORT).show();
+                }
+                String masach = edt_masach_HDCT.getText().toString();
+                soluong = Integer.valueOf(edt_soluong_HDCT.getText().toString());
+                double a = timSach(masach, soluong);
+                if (a == 2) {
+                    Toast.makeText(ThemHDCTActivity.this, "Quá số lượng hiện có", Toast.LENGTH_SHORT).show();
+                }
+                if (a != 0 && a != 2) {
+                    double thanhtien = a * soluong;
+                    tv_thanhtoan_HDCT.setText("Thành tiền : " + thanhtien);
+                }
+            }
+        });
+
     }
 
     public int timHoaDon(String mahoadon) {
         int result = 0;
-//        databaseHelper = new DatabaseHelper(ThemHDCTActivity.this);
         hoaDonDAO = new HoaDonDao(ThemHDCTActivity.this);
         List<HoaDon> hoaDonList = hoaDonDAO.getAllHoaDon();
         for (HoaDon hoaDon : hoaDonList) {
@@ -123,7 +136,6 @@ public class ThemHDCTActivity extends AppCompatActivity {
 
     public double timSach(String masach, int soluong) {
         double result = 0;
-//        databaseHelper = new DatabaseHelper(ThemHDCTActivity.this);
         sachDAO = new SachDao(ThemHDCTActivity.this);
         List<Sach> sachList = sachDAO.getAllSach();
         for (int i = 0; i < sachList.size(); i++) {

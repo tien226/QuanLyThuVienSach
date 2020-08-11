@@ -21,16 +21,16 @@ public class ThongKeActivity extends AppCompatActivity {
         setContentView(R.layout.tong_hop_thong_ke);
         setTitle("Quản Lý Sách");
         toolbar = findViewById(R.id.toolbarthongke);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        // ánh xạ
         tvNgay = (TextView) findViewById(R.id.tvThongKeNgay);
         tvThang = (TextView) findViewById(R.id.tvThongKeThang);
         tvNam = (TextView) findViewById(R.id.tvThongKeNam);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
+        //lấy doanh thu theo ngày, tháng, năm
         hoaDonChiTietDAO = new HoaDonChiTietDao(ThongKeActivity.this);
-
         tvNgay.setText("Hôm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNgay());
         tvThang.setText("Tháng Này: "+hoaDonChiTietDAO.getDoanhThuTheoThang());
         tvNam.setText("Năm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNam());

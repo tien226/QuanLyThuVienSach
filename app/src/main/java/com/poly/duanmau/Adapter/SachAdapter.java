@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -76,6 +78,10 @@ public class SachAdapter extends BaseAdapter implements Filterable {
 //                changeDataset(sachDAO.getAllSach());
 //            }
 //        });
+
+        //hiệu ứng listview
+        Animation animation = AnimationUtils.loadAnimation(context,R.anim.scale_list);
+        convertView.startAnimation(animation);
         return convertView;
     }
 

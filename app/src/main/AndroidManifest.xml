@@ -22,7 +22,7 @@
             android:parentActivityName=".Activity.MainActivity" />
         <activity android:name=".Activity.HDCTActivity" />
         <activity android:name=".Activity.ThemHDCTActivity" />
-        <activity android:name=".Activity.Them_Hoa_Don_Activity" />
+        <activity android:name=".Activity.HoaDonActivity" />
         <activity
             android:name=".Activity.ChangePassActivity"
             android:parentActivityName=".Activity.ListNguoiDungActivity" />

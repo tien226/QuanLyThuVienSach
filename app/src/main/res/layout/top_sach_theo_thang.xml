@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbartopsach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,12 +30,12 @@
             android:hint="Nhập tháng tìm kiếm" />
 
         <Button
+            android:id="@+id/btntimkiem_TopSach"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/backgroud_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="VIEW_SACH_TOP_10"
             android:text="Tìm" />
     </LinearLayout>
 

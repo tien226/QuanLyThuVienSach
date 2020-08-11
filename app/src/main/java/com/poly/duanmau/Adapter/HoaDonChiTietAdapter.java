@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,15 +63,19 @@ public class HoaDonChiTietAdapter extends BaseAdapter {
         holder.giaBan.setText("Giá bán: " + hoaDonChiTiet.getSach().getGiaBan());
         holder.soLuong.setText("Số lượng: " + hoaDonChiTiet.getSoLuongMua());
         holder.thanhTien.setText("Thành tiền: " + hoaDonChiTiet.getSach().getGiaBan() * hoaDonChiTiet.getSoLuongMua());
-        holder.close_hoaDonChiTiet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                databaseHelper = new DatabaseHelper(parent.getContext());
-                hoaDonChiTietDAO = new HoaDonChiTietDao(context);
-                hoaDonChiTietDAO.deleteHDCT(String.valueOf(hoaDonChiTiet.getMaHDCT()));
-                changeDataSet(hoaDonChiTietDAO.getAllHoaDonChiTiet());
-            }
-        });
+//        holder.close_hoaDonChiTiet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                databaseHelper = new DatabaseHelper(parent.getContext());
+//                hoaDonChiTietDAO = new HoaDonChiTietDao(context);
+//                hoaDonChiTietDAO.deleteHDCT(String.valueOf(hoaDonChiTiet.getMaHDCT()));
+//                changeDataSet(hoaDonChiTietDAO.getAllHoaDonChiTiet());
+//            }
+//        });
+
+        //hiệu ứng listview
+        Animation animation = AnimationUtils.loadAnimation(context,R.anim.scale_list);
+        convertView.startAnimation(animation);
 
         return convertView;
     }
