@@ -9,8 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,15 +21,18 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
 import com.poly.duanmau.DAO.HoaDonDao;
 import com.poly.duanmau.DAO.SachDao;
+import com.poly.duanmau.DAO.TheLoaiDao;
 import com.poly.duanmau.Model.HoaDon;
 import com.poly.duanmau.Model.HoaDonChiTiet;
 import com.poly.duanmau.Model.Sach;
+import com.poly.duanmau.Model.TheLoai;
 import com.poly.duanmau.R;
 
 import java.util.List;
 
 public class ThemHDCTActivity extends AppCompatActivity {
-    EditText edt_mahd_HDCT, edt_masach_HDCT, edt_soluong_HDCT;
+    EditText edt_mahd_HDCT, edt_soluong_HDCT;
+    Spinner edt_masach_HDCT;
     TextView tv_thanhtoan_HDCT;
     Button btn_themHDCT, btn_thanhtoanHDCT;
     HoaDonDao hoaDonDAO;
@@ -34,6 +40,8 @@ public class ThemHDCTActivity extends AppCompatActivity {
     HoaDonChiTietDao hoaDonChiTietDAO;
     int soluong;
     Toolbar toolbarhdct;
+    List<Sach> listSach;
+    String maSach="";
     TextInputLayout textInputLayoutMaHDCT, textInputLayoutMaSach, textInputLayoutSoLuong;
 
     @Override
@@ -83,7 +91,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
                     }
                 }
                 for (int i = 0; i < sachs.size(); i++) {
-                    String ms = edt_masach_HDCT.getText().toString();
+                    String ms = maSach;
                     if (ms.equals(sachs.get(i).getMaSach())) {
                         s = sachs.get(i);
                     }
@@ -117,9 +125,9 @@ public class ThemHDCTActivity extends AppCompatActivity {
                 if (timHoaDon(maHD) == 0) {
                     Toast.makeText(ThemHDCTActivity.this, "Không tìm thấy mã hóa đơn", Toast.LENGTH_SHORT).show();
                 }
-                String masach = edt_masach_HDCT.getText().toString();
+//                String masach = edt_masach_HDCT.getText().toString();
                 soluong = Integer.valueOf(edt_soluong_HDCT.getText().toString());
-                double a = timSach(masach, soluong);
+                double a = timSach(maSach, soluong);
                 if (a == 2) {
                     Toast.makeText(ThemHDCTActivity.this, "Quá số lượng hiện có", Toast.LENGTH_SHORT).show();
                 }
@@ -127,6 +135,18 @@ public class ThemHDCTActivity extends AppCompatActivity {
                     double thanhtien = a * soluong;
                     tv_thanhtoan_HDCT.setText("Thành tiền : " + thanhtien);
                 }
+            }
+        });
+        getTheloai();
+        edt_masach_HDCT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                maSach = listSach.get(edt_masach_HDCT.getSelectedItemPosition()).getMaSach();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -159,5 +179,13 @@ public class ThemHDCTActivity extends AppCompatActivity {
             }
         }
         return result;
+    }
+
+    public void getTheloai(){
+        sachDAO = new SachDao(this);
+        listSach = sachDAO.getAllSach();
+        ArrayAdapter<Sach> theLoaiArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,listSach);
+        theLoaiArrayAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+        edt_masach_HDCT.setAdapter(theLoaiArrayAdapter);
     }
 }

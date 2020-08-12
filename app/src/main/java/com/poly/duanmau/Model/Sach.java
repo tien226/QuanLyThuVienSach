@@ -79,14 +79,6 @@ public class Sach {
     @NonNull
     @Override
     public String toString() {
-        return "Sach{" +
-                "maSach='" + maSach + '\'' +
-                ", maTheLoai='" + maTheLoai + '\'' +
-                ", tenSach='" + tenSach + '\'' +
-                ", tacGia='" + tacGia + '\'' +
-                ", NXB='" + NXB + '\'' +
-                ", giaBia=" + giaBan +
-                ", soLuong=" + soLuong +
-                '}';
+        return maSach;
     }
 }
