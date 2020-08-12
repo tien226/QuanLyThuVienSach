@@ -18,14 +18,12 @@ public class ManhinhchaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manhinhchao);
 
+
         TextView wellcomlibrary = (TextView) findViewById(R.id.Et_title);
-        ImageView iconlibrary = (ImageView) findViewById(R.id.icon_library);
         ImageView Loading_library = findViewById(R.id.loading_library);
 
         Glide.with(this).load(R.drawable.loading).into(Loading_library);
-//         Loading_library.setImageResource();
-        iconlibrary.setImageResource(R.drawable.splash1);
-        wellcomlibrary.setText("\"Chào mừng bạn đến với ứng dụng quản lý thư viện\"");
+        wellcomlibrary.setText("\"Chào mừng bạn đến với ứng dụng quản lý thư viện sách\"");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

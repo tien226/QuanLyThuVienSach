@@ -110,7 +110,7 @@ public class NguoiDungActivity extends AppCompatActivity {
                 edRePass.setText("");
                 edPhone.setText("");
                 edPassWord.setText("");
-                startActivity(new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class));
+                startActivity(new Intent(NguoiDungActivity.this,MainActivity.class));
             }
         });
 
@@ -121,7 +121,6 @@ public class NguoiDungActivity extends AppCompatActivity {
                 Animation animation = AnimationUtils.loadAnimation(NguoiDungActivity.this,R.anim.alpha_click);
                 btndanhsach.startAnimation(animation);
 
-                //chuyển sang list người dùng
                 Intent intent= new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class);
                 startActivity(intent);
             }

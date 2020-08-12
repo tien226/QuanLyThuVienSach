@@ -8,8 +8,8 @@ android:layout_height="match_parent">
         android:layout_marginRight="8dp"
         android:id="@+id/icon_sach"
         android:src="@drawable/sach2"
-        android:layout_width="64dp"
-        android:layout_height="64dp"/>
+        android:layout_width="48dp"
+        android:layout_height="48dp"/>
 
     <TextView
         android:layout_toRightOf="@+id/icon_sach"
@@ -18,6 +18,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/ten_sach"
         android:layout_toRightOf="@+id/icon_sach"
         android:id="@+id/Gia_ban_sach"

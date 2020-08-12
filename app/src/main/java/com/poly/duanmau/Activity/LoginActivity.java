@@ -88,8 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Animation animation = AnimationUtils.loadAnimation(LoginActivity.this,R.anim.alpha_click);
                 btnthoat_lg.startAnimation(animation);
-
-
+                finish();
             }
         });
 
@@ -100,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 Animation animation = AnimationUtils.loadAnimation(LoginActivity.this,R.anim.alpha_click);
                 tvdangky.startAnimation(animation);
 
+                startActivity(new Intent(LoginActivity.this,NguoiDungActivity.class));
             }
         });
 

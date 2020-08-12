@@ -34,11 +34,11 @@ public class TopBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.top_sach_theo_thang);
         setTitle("TOP 10 SÁCH BÁN CHẠY");
+        toolbar = findViewById(R.id.toolbartopsach);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // ánh xạ
-        toolbar = findViewById(R.id.toolbartopsach);
         lvBook = (ListView) findViewById(R.id.lvBookTop);
         edThang = (EditText) findViewById(R.id.edThang);
         btntim_topsach = findViewById(R.id.btntimkiem_TopSach);

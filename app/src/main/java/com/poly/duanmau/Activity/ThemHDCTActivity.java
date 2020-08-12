@@ -137,7 +137,8 @@ public class ThemHDCTActivity extends AppCompatActivity {
                 }
             }
         });
-        getTheloai();
+
+        getSach();
         edt_masach_HDCT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -181,7 +182,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
         return result;
     }
 
-    public void getTheloai(){
+    public void getSach(){
         sachDAO = new SachDao(this);
         listSach = sachDAO.getAllSach();
         ArrayAdapter<Sach> theLoaiArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,listSach);
