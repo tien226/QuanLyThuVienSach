@@ -16,7 +16,9 @@
         android:textSize="24dp"
         android:textStyle="bold"
         android:textColor="#FF0000" />
+
     <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="24dp"
         android:id="@+id/textInputLayoutTenSach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
