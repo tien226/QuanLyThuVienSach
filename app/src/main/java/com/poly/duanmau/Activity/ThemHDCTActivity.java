@@ -83,6 +83,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
                 sachDAO = new SachDao(ThemHDCTActivity.this);
                 List<HoaDon> hoaDons = hoaDonDAO.getAllHoaDon();
                 List<Sach> sachs = sachDAO.getAllSach();
+
                 HoaDon hd = null;
                 Sach s = null;
                 for (int i = 0; i < hoaDons.size(); i++) {
@@ -104,14 +105,12 @@ public class ThemHDCTActivity extends AppCompatActivity {
                     textInputLayoutMaHDCT.setError("");
                     textInputLayoutSoLuong.setError("");
                     HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(1, hd, s, Integer.valueOf(edt_soluong_HDCT.getText().toString()));
-                    long t = hoaDonChiTietDAO.insertHDCT(hoaDonChiTiet);
-                    if (t > 0) {
+                    if (hoaDonChiTietDAO.insertHDCT(hoaDonChiTiet) > 0) {
                         Toast.makeText(ThemHDCTActivity.this, "Thêm hóa đơn chi tiết thành công", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(ThemHDCTActivity.this, "Thêm hóa đơn chi tiết không thành công!", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
 
