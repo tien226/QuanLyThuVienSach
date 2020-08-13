@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
     android:orientation="vertical"
     tools:context=".Activity.ChiTietTheLoai">
 
     <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,20 +17,25 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/theloai2" />
+    <TextView
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="Chi Tiết Thể Loại"
+        android:textSize="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginTop="18dp"
         android:padding="10px"
         android:id="@+id/tvMaTL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="10pt"
         android:hint="Mã thể loại" />
+
     <TextView
             android:id="@+id/tvTenTL"
             android:layout_width="match_parent"

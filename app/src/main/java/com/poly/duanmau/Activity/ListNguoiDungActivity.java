@@ -77,14 +77,15 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //option menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        if (id == R.id.add){
-            Intent intent = new Intent(ListNguoiDungActivity.this,NguoiDungActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.changePass){
+//        if (id == R.id.add){
+//            Intent intent = new Intent(ListNguoiDungActivity.this,NguoiDungActivity.class);
+//            startActivity(intent);
+//        } else
+        if (id == R.id.changePass){
             Intent intent = new Intent(ListNguoiDungActivity.this,ChangePassActivity.class);
             startActivity(intent);
         } else {
@@ -101,6 +102,7 @@ public class ListNguoiDungActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
+    // sửa, xóa dữ liệu
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();

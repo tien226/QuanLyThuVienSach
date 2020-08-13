@@ -39,6 +39,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
     SachDao sachDAO;
     HoaDonChiTietDao hoaDonChiTietDAO;
     int soluong;
+    String soluongtim;
     Toolbar toolbarhdct;
     List<Sach> listSach;
     String maSach="";
@@ -97,6 +98,8 @@ public class ThemHDCTActivity extends AppCompatActivity {
                         s = sachs.get(i);
                     }
                 }
+
+
                 if (textInputLayoutMaHDCT.getEditText().length() == 0) {
                     textInputLayoutMaHDCT.setError("Không được bỏ trống!");
                 }else if (textInputLayoutSoLuong.getEditText().length()==0){
@@ -105,6 +108,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
                     textInputLayoutMaHDCT.setError("");
                     textInputLayoutSoLuong.setError("");
                     HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(1, hd, s, Integer.valueOf(edt_soluong_HDCT.getText().toString()));
+
                     if (hoaDonChiTietDAO.insertHDCT(hoaDonChiTiet) > 0) {
                         Toast.makeText(ThemHDCTActivity.this, "Thêm hóa đơn chi tiết thành công", Toast.LENGTH_SHORT).show();
                     } else {

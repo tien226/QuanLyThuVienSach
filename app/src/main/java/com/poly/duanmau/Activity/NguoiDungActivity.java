@@ -39,7 +39,7 @@ public class NguoiDungActivity extends AppCompatActivity {
         //ánh xạ
         btnthem = findViewById(R.id.btnthem_nguoidung);
         btnhuy = findViewById(R.id.btnhuy_nguoidung);
-        btndanhsach = findViewById(R.id.btnds_nguoidung);
+//        btndanhsach = findViewById(R.id.btnds_nguoidung);
         edUser = findViewById(R.id.edUser);
         edPassWord = findViewById(R.id.edPassWord);
         edRePass = findViewById(R.id.edRePassWord);
@@ -110,21 +110,21 @@ public class NguoiDungActivity extends AppCompatActivity {
                 edRePass.setText("");
                 edPhone.setText("");
                 edPassWord.setText("");
-                startActivity(new Intent(NguoiDungActivity.this,MainActivity.class));
+                startActivity(new Intent(NguoiDungActivity.this,LoginActivity.class));
             }
         });
 
         //button danh sách người dùng
-        btndanhsach.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(NguoiDungActivity.this,R.anim.alpha_click);
-                btndanhsach.startAnimation(animation);
-
-                Intent intent= new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btndanhsach.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Animation animation = AnimationUtils.loadAnimation(NguoiDungActivity.this,R.anim.alpha_click);
+//                btndanhsach.startAnimation(animation);
+//
+//                Intent intent= new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
 }

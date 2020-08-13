@@ -28,15 +28,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:padding="16dp"
-            android:background="@drawable/et_bg_black"
             android:layout_marginTop="24dp"
             android:hint="Số điện thoại"
             android:id="@+id/edtsuaphonenguoidung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
 
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
@@ -45,7 +44,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_marginTop="16dp"
             android:padding="16dp"
-            android:background="@drawable/et_bg_black"
             android:hint="Họ tên"
             android:id="@+id/edtsuahotennguoidung"
             android:layout_width="match_parent"

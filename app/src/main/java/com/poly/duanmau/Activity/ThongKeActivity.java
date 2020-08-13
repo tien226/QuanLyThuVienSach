@@ -2,14 +2,11 @@ package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
-
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
-import com.poly.duanmau.Database.DatabaseHelper;
 import com.poly.duanmau.R;
+
 
 public class ThongKeActivity extends AppCompatActivity {
     TextView tvNgay, tvThang, tvNam;

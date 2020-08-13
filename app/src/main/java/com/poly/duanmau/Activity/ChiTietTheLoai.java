@@ -19,9 +19,8 @@ public class ChiTietTheLoai extends AppCompatActivity {
         setContentView(R.layout.activity_chi_tiet_the_loai);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Chi tiết thể loại");
+        setTitle("Quản Lý Sách");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tvMaTL = findViewById(R.id.tvMaTL);
         tvTenTL = findViewById(R.id.tvTenTL);

@@ -21,10 +21,10 @@ public class ChiTietNguoiDung extends AppCompatActivity {
         setContentView(R.layout.activity_chi_tiet_nguoi_dung);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Chi tiết người dùng");
+        setTitle("Quản Lý Sách");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // ánh xạ
         edUser = (TextView) findViewById(R.id.edUserName);
         edPass = (TextView) findViewById(R.id.edPassword);
         edPhone = findViewById(R.id.edPhone);

@@ -140,15 +140,15 @@
                 android:text="Thoát" />
         </LinearLayout>
 
-        <Button
-            android:layout_marginTop="8dp"
-            android:textColor="@color/colorPrimary"
-            android:background="@drawable/backgroud_btn"
-            android:id="@+id/btnds_nguoidung"
-            android:layout_marginBottom="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="danh sách người dùng" />
+<!--        <Button-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:background="@drawable/backgroud_btn"-->
+<!--            android:id="@+id/btnds_nguoidung"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="danh sách người dùng" />-->
 
     </LinearLayout>
 
