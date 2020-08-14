@@ -52,7 +52,7 @@ public class ListHoaDonActivity extends AppCompatActivity {
         lv_hoadon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ListHoaDonActivity.this, HDCTActivity.class);
+                Intent intent = new Intent(ListHoaDonActivity.this, ListHDCTActivity.class);
                 Bundle bundle = new Bundle();
                 String maHDgui = hoaDonDAO.getAllHoaDon().get(position).getMaHoaDon();
                 bundle.putString("maHDgui", maHDgui);

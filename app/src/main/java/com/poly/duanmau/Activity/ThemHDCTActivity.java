@@ -92,6 +92,7 @@ public class ThemHDCTActivity extends AppCompatActivity {
                         hd = hoaDons.get(i);
                     }
                 }
+
                 for (int i = 0; i < sachs.size(); i++) {
                     String ms = maSach;
                     if (ms.equals(sachs.get(i).getMaSach())) {

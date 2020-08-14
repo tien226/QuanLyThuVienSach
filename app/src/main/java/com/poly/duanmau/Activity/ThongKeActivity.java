@@ -2,6 +2,7 @@ package com.poly.duanmau.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.widget.TextView;
 import com.poly.duanmau.DAO.HoaDonChiTietDao;
@@ -12,6 +13,7 @@ public class ThongKeActivity extends AppCompatActivity {
     TextView tvNgay, tvThang, tvNam;
     HoaDonChiTietDao hoaDonChiTietDAO;
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +30,9 @@ public class ThongKeActivity extends AppCompatActivity {
 
         //lấy doanh thu theo ngày, tháng, năm
         hoaDonChiTietDAO = new HoaDonChiTietDao(ThongKeActivity.this);
-        tvNgay.setText("Hôm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNgay());
-        tvThang.setText("Tháng Này: "+hoaDonChiTietDAO.getDoanhThuTheoThang());
-        tvNam.setText("Năm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNam());
+        tvNgay.setText("Hôm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNgay()+" VNĐ");
+        tvThang.setText("Tháng Này: "+hoaDonChiTietDAO.getDoanhThuTheoThang()+" VNĐ");
+        tvNam.setText("Năm Nay: "+hoaDonChiTietDAO.getDoanhThuTheoNam()+" VNĐ");
 
     }
 }
