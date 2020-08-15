@@ -81,10 +81,10 @@ public class ListNguoiDungActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-//        if (id == R.id.add){
-//            Intent intent = new Intent(ListNguoiDungActivity.this,NguoiDungActivity.class);
-//            startActivity(intent);
-//        } else
+        if (id == R.id.add){
+            Intent intent = new Intent(ListNguoiDungActivity.this,NguoiDungActivity.class);
+            startActivity(intent);
+        } else
         if (id == R.id.changePass){
             Intent intent = new Intent(ListNguoiDungActivity.this,ChangePassActivity.class);
             startActivity(intent);

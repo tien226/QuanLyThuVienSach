@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.ListNguoiDungActivity">
     <item
+        android:id="@+id/add"
+        app:showAsAction="collapseActionView"
+        android:title="Thêm người dùng" />
+    <item
         android:id="@+id/changePass"
         app:showAsAction="collapseActionView"
         android:title="Đổi mật khẩu" />

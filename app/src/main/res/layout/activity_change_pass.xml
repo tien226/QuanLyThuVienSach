@@ -23,7 +23,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
-        android:text="THÊM NGƯỜI DÙNG"
+        android:text="Đổi Mật Khẩu"
         android:textSize="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
