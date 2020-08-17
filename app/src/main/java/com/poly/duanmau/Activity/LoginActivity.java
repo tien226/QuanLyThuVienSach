@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 nguoiDungDAO = new NguoiDungDao(LoginActivity.this);
                 nguoiDungList = nguoiDungDAO.getAllNguoiDung();
                 if (struser.isEmpty() || strpass.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Tên đăng nhập và mật khẩu không được bỏ trống!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                 } else {
                     if (struser.equalsIgnoreCase("admin") && strpass.equalsIgnoreCase("admin")) {
                         Luutaikhoan(struser, strpass, check);
