@@ -18,7 +18,6 @@ public class ManhinhchaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manhinhchao);
 
-
         TextView wellcomlibrary = (TextView) findViewById(R.id.Et_title);
         ImageView Loading_library = findViewById(R.id.loading_library);
 

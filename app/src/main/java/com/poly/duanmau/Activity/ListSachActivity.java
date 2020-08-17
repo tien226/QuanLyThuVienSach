@@ -24,6 +24,7 @@ import com.poly.duanmau.DAO.SachDao;
 import com.poly.duanmau.Model.Sach;
 import com.poly.duanmau.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListSachActivity extends AppCompatActivity {
@@ -31,7 +32,7 @@ public class ListSachActivity extends AppCompatActivity {
     EditText edttimkiemsach;
     ListView lv_sach;
     SachDao sachDao;
-    List<Sach>  sachList;
+    List<Sach>  sachList = new ArrayList<>();
     SachAdapter sachAdapter;
     Toolbar toolbar;
     @Override
@@ -100,7 +101,6 @@ public class ListSachActivity extends AppCompatActivity {
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-
         getMenuInflater().inflate(R.menu.menu_context,menu);
         super.onCreateContextMenu(menu, v, menuInfo);
     }

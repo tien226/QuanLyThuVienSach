@@ -69,12 +69,12 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
         } else {
             holder = (viewHolder) convertView.getTag();
         }
+
         holder.tv_mahoadon.setText("Mã Hóa Đơn: "+hoaDon.getMaHoaDon());
         // chuyển ngày sang dạng String
         Format formatter = new SimpleDateFormat("yyyy-MM-dd");
         String s = formatter.format(hoaDon.getNgayMua());
         holder.ngay_mua.setText("Ngày Mua Hóa Đơn: "+s);
-
 
         //hiệu ứng listview
         Animation animation = AnimationUtils.loadAnimation(context,R.anim.scale_list);
@@ -123,7 +123,6 @@ public class HoaDonAdapter extends BaseAdapter implements Filterable {
             }
         }
     }
-
 
     @Override
     public void notifyDataSetChanged() {
