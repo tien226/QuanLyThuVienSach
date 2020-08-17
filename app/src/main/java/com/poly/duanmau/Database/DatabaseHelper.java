@@ -11,7 +11,7 @@ import com.poly.duanmau.DAO.SachDao;
 import com.poly.duanmau.DAO.TheLoaiDao;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String Database_Name = "qlsfpoly.db";
+    public static final String Database_Name = "Libary.db";
     public static final int Database_Version= 1;
     public DatabaseHelper(Context context) {
         super(context, Database_Name, null, Database_Version);
